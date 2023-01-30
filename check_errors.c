@@ -6,56 +6,78 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/01/18 17:29:47 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:04:01 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_error(void)
+int	print_error(void)
 {
 	ft_printf("Error\n");
+	return (0);
 }
 
-void	print_stack(t_list *lst)
+int	check_errors(int argc, char **argv, t_list **a)
 {
-	while (lst)
-	{
-		ft_printf("%d\n", lst->nbr);
-		lst = lst->next;
-	}
+	if (argc == 1 || ft_is_int(argc, argv) == 0)
+		return (print_error());
+	*a = create_stack_a(argv);
+	if (check_duplicates(*a) == 0)
+		return (print_error());
+	return (1);
 }
 
-t_list	*create_stack_a(int argc, char **argv)
-{
-	t_list	*a;
-	int		i;
-
-	a = NULL;
-	i = 1;
-	while (argv[i])
-	{
-		ft_lstadd_back(&a, ft_lstnew(ft_atoi(argv[i++])));
-	}
-	return (a);
-}
-
-int	check_duplicates(int argc, char **argv)
+int	is_str_int(char *str)
 {
 	int	i;
-	int	j;
+
+	i = 0;
+	if (str[0] == '-' || str[0] == '+')
+		i++;
+	while (str[i])
+	{
+		if (ft_isdigit(str[i]) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_is_int(int argc, char **argv) //pb sur le 0 et -0
+{
+	int	i;
+	int	len;
 
 	i = 1;
-	while (i < argc - 1)
+	while (i < argc)
 	{
-		j = i + 1;
-		while (j < argc - 2)
-		{
-			if (ft_strncmp(argv[i], argv[j], 100) == 0)
-				return (0);
-			j++;
-		}
+		if (is_str_int(argv[i]) == 0)
+			return (0);
+		len = ft_strlen(argv[i]);
+		if (ft_strncmp(ft_itoa(ft_atoi(argv[i])), argv[i], len) != 0)
+			return (0);
 		i++;
+	}
+	return (1);
+}
+
+int	check_duplicates(t_list	*lst)
+{
+	t_list	*temp;
+	t_list	*current;
+
+	current = lst;
+	while (current)
+	{
+		temp = current -> next;
+		while (temp)
+		{
+			if (current -> nbr == temp -> nbr)
+				return (0);
+			temp = temp -> next;
+		}
+		current = current -> next;
 	}
 	return (1);
 }

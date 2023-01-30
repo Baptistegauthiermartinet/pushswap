@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/01/18 17:18:29 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/01/30 14:48:13 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,17 @@
 
 typedef struct s_list
 {
-	int				*nbr;
+	int				nbr;
 	struct s_list	*next;
+	struct s_list	*previous;	
 }	t_list;
+
+// typedef struct s_push_swap
+// {
+// 	t_list stack_a;
+// 	t_list stack_b;
+// 	t_insn_list insn_list;
+// }
 
 /*Fonctions Libft*/
 int		ft_atoi(const char *str);
@@ -92,9 +100,21 @@ int		ft_printf(const char *str, ...);
 void	get_type(const char *str, va_list a, size_t *i, int *printed);
 
 /*Fonctins push_swp*/
-void	print_error(void);
-int		check_duplicates(int arg_nbr, char **arguments);
-t_list	*create_stack_a(int argc, char **argv);
+t_list	*ft_lstnew_push_swap(int content);
+
+int		print_error(void);
+int		check_errors(int argc, char **argv, t_list **a);
+int		is_str_int(char *str);
+int		ft_is_int(int argc, char **argv);
+int		check_duplicates(t_list	*a);
+
+t_list	*create_stack_a(char **argv);
+void	add_prev_ptr(t_list *lst);
+
+void	print_stacks(t_list *a, t_list *b);
 void	print_stack(t_list *lst);
+
+
+void	remove_one_node(t_list *lst);
 
 #endif
