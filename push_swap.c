@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/01/30 14:58:16 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/03/28 12:05:43 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	print_stack(t_list *lst)
 {
+	if (!lst)
+	{
+		ft_printf("stack NULL\n");
+		return;
+	}
 	t_list	*temp;
 
 	temp = lst -> previous;
@@ -52,32 +57,15 @@ void	print_stacks(t_list *a, t_list *b)
 
 int	main(int argc, char **argv)
 {
-	// char	**arguments;
-	// int		i;
+	t_list	*stack_a;
+	t_list	*stack_b;
 	
-	// // if (argc == 2)
-	// // {
-	// // 	arguments = ft_split(argv[1], ' ');
-	// // 	i = 0;
-	// // 	while (arguments[i])
-	// // 		i++;
-	// // 	argc += i - 1;
-	// // 	check_errors(argc, arguments);
-	// // }
-	// // check_errors(argc, argv);
+	stack_b = NULL;
+	if (check_errors(argc, argv, &stack_a) == 0)
+		return (0);
+	add_prev_ptr(stack_a);
 
-
-
-	t_list	*a;
-	
-	check_errors(argc, argv, &a);
-	add_prev_ptr(a);
-//	print_stack(a);
-
-
-	remove_one_node(a);
-	print_stack(a);
-
-
+	print_stack(stack_a);
+	print_stack(stack_b);
 }
 
