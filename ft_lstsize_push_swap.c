@@ -6,16 +6,15 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 12:04:29 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/03/28 12:04:30 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:41:01 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 int	ft_lstsize_push_swap(t_list *lst)
 {
-	int	i;
+	int		i;
 	t_list	*temp;
 	t_list	*current;
 

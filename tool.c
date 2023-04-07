@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_stacks.c                                    :+:      :+:    :+:   */
+/*   tool.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 14:05:03 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/04 13:01:58 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/04/07 12:21:43 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/04/07 12:44:43 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*create_stack_a(char **argv)
+int	nbr_comp(char *nbr, char *argument, int n)
 {
-	t_list	*a;
-	int		i;
+	int	i;
+	int	j;
 
-	a = NULL;
-	i = 1;
-	while (argv[i])
+	i = 0;
+	j = 0;
+	if (argument[j] == '-' && nbr[i] == '-')
 	{
-		ft_lstadd_back(&a, ft_lstnew_push_swap(ft_atoi(argv[i++])));
+		j++;
+		i++;
 	}
-	return (a);
-}
-
-void	add_prev_ptr(t_list *lst)
-{
-	t_list	*temp;
-	t_list	*current;
-
-	temp = lst;
-	current = lst -> next;
-	while (current)
+	while (argument[j] && argument[j] == '0')
+		j++;
+	while (nbr[i] && argument[j] && nbr[i] == argument[j] && n > 0)
 	{
-		current -> previous = temp;
-		temp = current;
-		current = current -> next;
+		i++;
+		j++;
+		n--;
 	}
-	temp = ft_lstlast(lst);
-	lst -> previous = temp;
-	temp -> next = lst;
+	if (n == 0)
+		return (0);
+	return (nbr[i] - argument[j]);
 }

@@ -5,44 +5,46 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 11:06:40 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/03/28 12:07:00 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/04/07 12:49:17 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/04/07 13:34:50 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list  *swap_stack(t_list *stack)
-{
-    t_list *temp_next;
-    t_list *temp_next_next;
-    t_list *temp_prev;
-    int     size;
 
-    size = ft_lstsize_push_swap(stack);
-    if (size < 2)
-        return(stack);
-    if (size == 2)
-    {
-        rotate_stack(&stack);
-        return (stack);
-    }
-    temp_prev = stack -> previous;
-    temp_next = stack -> next;
-    temp_next_next = temp_next -> next;
-
-    temp_prev -> next = temp_next;
-    temp_next -> previous = temp_prev;
-    temp_next -> next = stack;
-    stack -> previous = temp_next;
-    stack -> next = temp_next_next;
-    temp_next_next -> previous = stack;
-    return (temp_next);
-}
-/*
-void    swap_both(t_list *stack_a, t_list *stack_b)
+void	swap_stack(t_list **head, int n)
 {
-    stack_a = swap_stack(stack_a);
-    stack_b = swap_stack(stack_b);
+	t_list	*temp_prev;
+	t_list	*second_node;
+	t_list	*temp_next;
+	int		size;
+
+	size = ft_lstsize_push_swap(*head);
+	if (size == 1 || size == 0)
+		return ;
+	if (size > 2)
+	{
+		temp_prev = (*head)-> previous;
+		second_node = (*head)-> next;
+		temp_next = second_node -> next;
+		temp_prev -> next = second_node;
+		second_node -> previous = temp_prev;
+		second_node -> next = (*head);
+		(*head)-> previous = second_node;
+		(*head)-> next = temp_next;
+		temp_next -> previous = (*head);
+		(*head) = second_node;
+	}
+	else
+		(*head) = (*head)-> next;
+	if (n == 1)
+		ft_printf("s%c\n", (*head)-> location);
 }
-*/
+
+void	swap_both(t_list **stack_a, t_list **stack_b)
+{
+	swap_stack(stack_a, 0);
+	swap_stack(stack_b, 0);
+	ft_printf("ss\n");
+}

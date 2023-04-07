@@ -6,30 +6,48 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:20:21 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/03/28 11:30:25 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:38:10 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    rotate_stack(t_list **stack)
+void	rotate_stack(t_list **stack)
 {
-    *stack = (*stack) -> next;
+	if ((*stack) != NULL)
+	{
+		*stack = (*stack)-> next;
+		ft_printf("r%c\n", (*stack)-> location);
+	}
+	else
+		return ;
 }
 
-void    rev_rotate_stack(t_list **stack)
+void	rev_rotate_stack(t_list **stack)
 {
-    *stack = (*stack) -> previous;
+	if ((*stack) != NULL)
+	{
+		*stack = (*stack)-> previous;
+		ft_printf("rr%c\n", (*stack)-> location);
+	}
+	else
+		return ;
 }
 
-void    rotate_both(t_list *stack_a, t_list *stack_b)
+void	rotate_both(t_list **stack_a, t_list **stack_b)
 {
-    rotate_stack(&stack_a);
-    rotate_stack(&stack_b);
+	if ((*stack_a) != NULL)
+		*stack_a = (*stack_a)-> next;
+	if ((*stack_b) != NULL)
+		*stack_b = (*stack_b)-> next;
+	ft_printf("rr\n");
 }
 
-void    rev_rotate_both(t_list *stack_a, t_list *stack_b)
+void	rev_rotate_both(t_list **stack_a, t_list **stack_b)
 {
-    rev_rotate_stack(&stack_a);
-    rev_rotate_stack(&stack_b);
+	if ((*stack_a) != NULL)
+		*stack_a = (*stack_a)-> previous;
+	if ((*stack_b) != NULL)
+		*stack_b = (*stack_b)-> previous;
+	ft_printf("rrr\n");
 }

@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/03/28 12:05:43 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:34:44 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ void	print_stack(t_list *lst)
 	t_list	*temp;
 
 	temp = lst -> previous;
-	ft_printf("Stack = ");
+	ft_printf("Stack %c = ", lst -> location);
 	while (lst != temp)
 	{
-		ft_printf(" %d ", lst->nbr);
+		ft_printf(" %d ", lst -> nbr);
 		lst = lst->next;
 	}
 	ft_printf(" %d\n", lst -> nbr);
@@ -34,25 +34,20 @@ void	print_stack(t_list *lst)
 
 void	print_stacks(t_list *a, t_list *b)
 {
-	t_list	*temp;
+	print_stack(a);
+	print_stack(b);
+}
 
-	temp = a -> previous;
-	ft_printf("A = ");
-	while (a != temp)
+void name_b(t_list *b)
+{
+	t_list *current = b;
+	while (current)
 	{
-		ft_printf(" %d ", a -> nbr);
-		a = a -> next;
+		current -> location = 'b';
+		current = current -> next;
 	}
-	ft_printf(" %d ", a -> nbr);
-	temp = b -> previous;
-	ft_printf("\nB = ");
-	while (b != temp)
-	{
-		ft_printf(" %d ", b -> nbr);
-		b = b -> next;
-	}
-	ft_printf(" %d \n", b -> nbr);
-
+	
+	
 }
 
 int	main(int argc, char **argv)
@@ -61,11 +56,26 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 	
 	stack_b = NULL;
+	/*char **tab = malloc(sizeof(char *) * 4);
+	if (!tab)
+		return (0);
+	tab[0] = "9";
+	tab[1] = "-9";
+	tab[2] = "8";
+	tab[3] = "7";
+	stack_b = create_stack_a(tab);
+	name_b(stack_b);
+	add_prev_ptr(stack_b);*/
 	if (check_errors(argc, argv, &stack_a) == 0)
 		return (0);
 	add_prev_ptr(stack_a);
-
-	print_stack(stack_a);
-	print_stack(stack_b);
+	
+	
+	swap_both(&stack_a, &stack_b);
+	
+	print_stacks(stack_a, stack_b);
 }
 
+
+/*	warning ----> Makefile a chier
+	debug ----> -g dans makefile, fichier json a completer(args et nom de l`exec), F5*/

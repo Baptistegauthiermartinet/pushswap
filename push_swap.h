@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/03/28 12:05:22 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:32:04 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,11 @@
 
 typedef struct s_list
 {
+	char			location;
 	int				nbr;
 	struct s_list	*next;
 	struct s_list	*previous;	
 }	t_list;
-
-// typedef struct s_push_swap
-// {
-// 	t_list stack_a;
-// 	t_list stack_b;
-// 	t_insn_list insn_list;
-// }
 
 /*Fonctions Libft*/
 int		ft_atoi(const char *str);
@@ -101,7 +95,6 @@ void	get_type(const char *str, va_list a, size_t *i, int *printed);
 t_list	*ft_lstnew_push_swap(int content);
 int		ft_lstsize_push_swap(t_list *lst);
 
-
 int		print_error(void);
 int		check_errors(int argc, char **argv, t_list **a);
 int		is_str_int(char *str);
@@ -114,14 +107,16 @@ void	add_prev_ptr(t_list *lst);
 void	print_stacks(t_list *a, t_list *b);
 void	print_stack(t_list *lst);
 
-t_list	*push_on_stack(t_list *stack_to, t_list *node);
-t_list  *swap_stack(t_list *stack);
+void	rotate_stack(t_list **stack);
+void	rev_rotate_stack(t_list **stack);
+void	rotate_both(t_list **stack_a, t_list **stack_b);
+void	rev_rotate_both(t_list **stack_a, t_list **stack_b);
 
-void    rotate_stack(t_list **stack);
-void    rev_rotate_stack(t_list **stack);
-void    rotate_both(t_list *stack_a, t_list *stack_b);
-void    rev_rotate_both(t_list *stack_a, t_list *stack_b);
+void	push_stack(t_list **stack_to, t_list **stack_from);
+int		nbr_comp(char *nbr, char *argument, int n);
 
+void    swap_stack(t_list **head, int n);
+void	swap_both(t_list **stack_a, t_list **stack_b);
 
 
 
