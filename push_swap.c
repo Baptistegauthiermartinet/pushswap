@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/07 13:34:44 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:27:16 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,14 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 	
 	stack_b = NULL;
-	/*char **tab = malloc(sizeof(char *) * 4);
-	if (!tab)
-		return (0);
-	tab[0] = "9";
-	tab[1] = "-9";
-	tab[2] = "8";
-	tab[3] = "7";
-	stack_b = create_stack_a(tab);
-	name_b(stack_b);
-	add_prev_ptr(stack_b);*/
 	if (check_errors(argc, argv, &stack_a) == 0)
 		return (0);
 	add_prev_ptr(stack_a);
 	
-	
-	swap_both(&stack_a, &stack_b);
+/*	push_stack(&stack_b, &stack_a);
+	push_stack(&stack_b, &stack_a);
+	push_stack(&stack_b, &stack_a);*/
+	swap_stack(&stack_a);
 	
 	print_stacks(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/07 13:32:04 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:03:05 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	rev_rotate_both(t_list **stack_a, t_list **stack_b);
 void	push_stack(t_list **stack_to, t_list **stack_from);
 int		nbr_comp(char *nbr, char *argument, int n);
 
-void    swap_stack(t_list **head, int n);
+void    swap_stack(t_list **head);
 void	swap_both(t_list **stack_a, t_list **stack_b);
 
 
