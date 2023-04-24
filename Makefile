@@ -1,4 +1,4 @@
-SRC = *.c
+SRC = sources/*.c
 OBJ = $(SRC:.c=.o)
 CC = cc -Wall -Wextra -Werror
 HEAD = push_swap.h
@@ -6,7 +6,7 @@ NAME = push_swap
 
 
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) 
 	$(CC) -o $(NAME) $(SRC)
 
 all : $(NAME)
