@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 12:41:25 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/02 15:23:46 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ void	print_stack(t_list *lst)
 	ft_printf("Stack %c = ", lst -> location);
 	while (lst != temp)
 	{
-		ft_printf(" %d ", lst -> nbr);
+		ft_printf(" %d(%d) ", lst -> nbr, lst -> index);
 		lst = lst->next;
 	}
-	ft_printf(" %d\n", lst -> nbr);
+	ft_printf(" %d(%d)\n", lst -> nbr, lst -> index);
 	lst = temp;
 }
 
@@ -61,7 +61,9 @@ int	main(int argc, char **argv)
 	add_prev_ptr(stack_a);
 	if (is_sorted(stack_a) == 1)
 		return (0);
-	get_class(&stack_a);
+	set_index(stack_a);
+
+	
 	
 
 
