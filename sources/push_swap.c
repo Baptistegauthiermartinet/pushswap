@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 12:13:35 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:41:25 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ int	main(int argc, char **argv)
 	add_prev_ptr(stack_a);
 	if (is_sorted(stack_a) == 1)
 		return (0);
-
+	get_class(&stack_a);
+	
 
 
 	

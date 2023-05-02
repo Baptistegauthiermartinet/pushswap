@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 12:11:42 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:44:24 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ typedef struct s_list
 {
 	char			location;
 	int				nbr;
+	int				class;
+	int				rank;
 	struct s_list	*next;
-	struct s_list	*previous;	
+	struct s_list	*previous;
 }	t_list;
 
 /*Fonctions Libft*/
@@ -67,7 +69,7 @@ void    swap_stack(t_list **stack, int n);
 void	swap_both(t_list **stack_a, t_list **stack_b);
 
 int is_sorted(t_list *stack);
-
+void	get_class(t_list **stack);
 
 
 

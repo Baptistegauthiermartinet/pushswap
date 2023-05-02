@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tool.c                                             :+:      :+:    :+:   */
+/*   get_class.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 12:21:43 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 12:17:08 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/05/02 12:25:25 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/05/02 12:38:05 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	nbr_comp(char *nbr, char *argument, int n)
+static int len_int(int nbr)
 {
 	int	i;
-	int	j;
+	int	sgn;
 
-	i = 0;
-	j = 0;
-	if (argument[j] == '-' && nbr[i] == '-')
+	sgn = 1;
+	if (nbr < 0)
+		sgn *= -1;
+	i = 1;
+	while (nbr / 10 != 0)
 	{
-		j++;
+		nbr /= 10;
 		i++;
 	}
-	while (argument[j] && argument[j] == '0')
-		j++;
-	while (nbr[i] && argument[j] && nbr[i] == argument[j] && n > 0)
-	{
-		i++;
-		j++;
-		n--;
-	}
-	if (n == 0)
-		return (0);
-	return (nbr[i] - argument[j]);
+	return (i * sgn);
 }
 
+void	get_class(t_list **stack)
+{
+	t_list	*last_node;
+	t_list	*first_node;
+
+	last_node = (*stack) -> previous;
+	first_node = (*stack);
+	while ((*stack) != last_node)
+	{
+		(*stack) -> class = len_int((*stack) -> nbr);
+		(*stack) = (*stack) -> next;
+	}
+	(*stack) = first_node;
+}
