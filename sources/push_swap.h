@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:35:37 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:11:42 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ int		nbr_comp(char *nbr, char *argument, int n);
 
 void    swap_stack(t_list **stack, int n);
 void	swap_both(t_list **stack_a, t_list **stack_b);
+
+int is_sorted(t_list *stack);
+
 
 
 
