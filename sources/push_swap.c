@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 15:23:46 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:58:20 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ void name_b(t_list *b)
 		current -> location = 'b';
 		current = current -> next;
 	}
-	
-	
 }
 
 int	main(int argc, char **argv)
@@ -62,8 +60,7 @@ int	main(int argc, char **argv)
 	if (is_sorted(stack_a) == 1)
 		return (0);
 	set_index(stack_a);
-
-	
+	sort_two(&stack_a);	
 	
 
 

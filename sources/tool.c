@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 12:21:43 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 15:25:43 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:45:05 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	nbr_comp(char *nbr, char *argument, int n)
 	return (nbr[i] - argument[j]);
 }
 
-void	give_index(t_list *stack)
+static void	give_index(t_list *stack)
 {
 	int		idx;
 	int		temp;
@@ -70,4 +70,21 @@ void	set_index(t_list *stack)
 		stack = stack -> next;
 	}
 	stack = head;
+}
+
+int	is_idx_max(t_list *stack)
+{
+	t_list	*head;
+	int		idx;
+
+	head = stack;
+	idx = stack -> index;
+	stack = stack -> next;
+	while (stack != head)
+	{
+		if (stack -> index > idx)
+			return (0);
+		stack = stack -> next;
+	}
+	return (1);
 }

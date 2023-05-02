@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 15:23:34 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/02 16:59:31 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,11 @@ int 	is_sorted(t_list *stack);
 
 void	set_index(t_list *stack);
 
+int	is_idx_max(t_list *stack);
+
+void	sort_two(t_list **stack);
+void	sort_three(t_list **stack);
+void	sort_four(t_list **stack_a, t_list **stack_b);
+void	sort_five(t_list **stack_a, t_list **stack_b);
 
 #endif
