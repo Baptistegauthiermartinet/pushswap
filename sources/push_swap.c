@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 16:58:20 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/04 19:53:16 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	main(int argc, char **argv)
 	if (is_sorted(stack_a) == 1)
 		return (0);
 	set_index(stack_a);
-	sort_two(&stack_a);	
+	sort(&stack_a, &stack_b);	
 	
 
 
