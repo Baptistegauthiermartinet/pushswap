@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 12:49:17 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:13:11 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/09 14:36:30 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,23 @@ void	swap_stack(t_list **stack, int n)
 {
 	int		head_nbr;
 	int		next_nbr;
+	int		head_idx;
+	int		next_idx;
 	t_list	*temp_next;
-	int		size;
 
 	if ((*stack) == NULL)
 		return ;
-	size = ft_lstsize_push_swap(*stack);
-	if (size == 1 || size == 0)
+	if (ft_lstsize_push_swap(*stack) == 1 || ft_lstsize_push_swap(*stack) == 0)
 		return ;
 	head_nbr = (*stack)-> nbr;
+	head_idx = (*stack)-> index;
 	temp_next = (*stack)-> next;
 	next_nbr = temp_next -> nbr;
+	next_idx = temp_next -> index;
 	(*stack)-> nbr = next_nbr;
+	(*stack)-> index = next_idx;
 	temp_next -> nbr = head_nbr;
+	temp_next -> index = head_idx;
 	if (n == 1)
 		ft_printf("s%c\n", (*stack)-> location);
 }

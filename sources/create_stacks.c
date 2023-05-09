@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:05:03 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/04 21:23:42 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:11:49 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ t_list	*create_stack_a(char **argv)
 	a = NULL;
 	i = 1;
 	while (argv[i])
-	{
 		ft_lstadd_back(&a, ft_lstnew_push_swap(ft_atoi(argv[i++])));  /*free ?*/
-		
-	}
 	return (a);
 }
 
