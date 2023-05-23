@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/09 18:13:59 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:49:41 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ void	rev_rotate_both(t_list **stack_a, t_list **stack_b);
 void	push_stack(t_list **stack_to, t_list **stack_from);
 int		nbr_comp(char *nbr, char *argument, int n);
 
-void    swap_stack(t_list **stack, int n);
+void	swap_stack(t_list **stack, int n);
 void	swap_both(t_list **stack_a, t_list **stack_b);
 
-int 	is_sorted(t_list *stack);
+int		is_sorted(t_list *stack);
 
 void	set_index(t_list *stack);
 
@@ -87,7 +87,5 @@ int		check_neighbours(t_list **stack);
 int		get_idx_min(t_list **stack);
 int		get_idx_max(t_list **stack);
 int		get_median(int max, int min);
-
-
 
 #endif

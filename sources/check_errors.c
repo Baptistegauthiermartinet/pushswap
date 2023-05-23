@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/04 19:14:37 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:47:32 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	ft_is_int(int argc, char **argv)
 		arg_len = ft_strlen(argv[i]);
 		nbr = ft_atoi(argv[i]);
 		str = ft_itoa(nbr);
-		if (nbr_comp(str, argv[i], arg_len) != 0) /* pb avec -0 ? */
+		if (nbr_comp(str, argv[i], arg_len) != 0)
 		{
 			free(str);
 			return (0);

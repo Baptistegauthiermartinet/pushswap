@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/09 17:10:40 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:53:40 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	print_stack(t_list *lst)
 {
+	t_list	*temp;
+
 	if (!lst)
 	{
 		ft_printf("stack NULL\n");
-		return;
+		return ;
 	}
-	t_list	*temp;
-
 	temp = lst -> previous;
 	ft_printf("Stack %c = ", lst -> location);
 	while (lst != temp)
@@ -38,9 +38,11 @@ void	print_stacks(t_list *a, t_list *b)
 	print_stack(b);
 }
 
-void name_b(t_list *b)
+void	name_b(t_list *b)
 {
-	t_list *current = b;
+	t_list	*current;
+
+	current = b;
 	while (current)
 	{
 		current -> location = 'b';
@@ -52,7 +54,7 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	
+
 	stack_b = NULL;
 	if (check_errors(argc, argv, &stack_a) == 0)
 		return (0);
@@ -60,17 +62,12 @@ int	main(int argc, char **argv)
 	if (is_sorted(stack_a) == 1)
 		return (0);
 	set_index(stack_a);
-	sort(&stack_a, &stack_b);	
+	sort(&stack_a, &stack_b);
 	
-
-
 	
 	print_stacks(stack_a, stack_b);
 	if (is_sorted(stack_a) == 1)
 		ft_printf("SUCCESS\n");
-
-
-	
 }
 
 
