@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_push_swap.c                              :+:      :+:    :+:   */
+/*   ft_lstsize_push_swap.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/30 10:29:38 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/04 11:38:58 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/03/28 12:04:29 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/05/26 13:22:29 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstnew_push_swap(int content)
+int	ft_lstsize_push_swap(t_list *lst)
 {
-	t_list	*new;
+	int		i;
+	t_list	*temp;
+	t_list	*current;
 
-	new = malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new -> location = 'a';
-	new -> nbr = content;
-	new -> next = NULL;
-	new -> previous = NULL;
-	return (new);
+	temp = lst;
+	current = lst -> next;
+	i = 1;
+	while (current != temp)
+	{
+		current = current -> next;
+		i++;
+	}
+	lst = temp;
+	return (i);
 }

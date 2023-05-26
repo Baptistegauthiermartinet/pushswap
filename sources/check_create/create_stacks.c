@@ -6,11 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:05:03 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/23 14:48:48 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:21:00 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 t_list	*create_stack_a(char **argv)
 {

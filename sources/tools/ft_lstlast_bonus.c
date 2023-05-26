@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 19:49:02 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/09 18:16:23 by bgauthie         ###   ########.fr       */
+/*   Created: 2022/11/18 15:18:21 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/05/26 13:22:27 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-void	sort(t_list **stack_a, t_list **stack_b)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	len;
-
-	len = ft_lstsize_push_swap(*stack_a);
-	if (len <= 5)
-		sort_short(stack_a, stack_b, len);
-	else
-		sort_long(stack_a, stack_b);
+	if (lst)
+	{
+		while (lst -> next != NULL)
+			lst = lst -> next;
+	}
+	return (lst);
 }

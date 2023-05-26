@@ -6,11 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 11:20:21 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 16:26:44 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:22:12 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rotate_stack(t_list **stack)
 {

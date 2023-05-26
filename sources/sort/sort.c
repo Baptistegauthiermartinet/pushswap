@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 13:44:11 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:24:13 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/05/04 19:49:02 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/05/26 13:22:21 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-char	*ft_strdup(const char *s1)
+void	sort(t_list **stack_a, t_list **stack_b)
 {
-	size_t	i;
-	char	*dst;
+	int	len;
 
-	i = 0;
-	while (s1[i])
-		i++;
-	dst = malloc(sizeof(char) * i + 1);
-	if (dst == NULL)
-		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		dst[i] = s1[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
+	len = ft_lstsize_push_swap(*stack_a);
+	if (len <= 5)
+		sort_short(stack_a, stack_b, len);
+	else
+		sort_long(stack_a, stack_b);
 }

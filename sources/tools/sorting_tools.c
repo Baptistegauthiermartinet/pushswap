@@ -6,11 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:03:30 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/09 18:13:52 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:22:35 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	check_two_top(t_list **stack)
 {

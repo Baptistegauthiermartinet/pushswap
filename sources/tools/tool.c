@@ -6,11 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 12:21:43 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/09 14:20:26 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:22:39 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	nbr_comp(char *nbr, char *argument, int n)
 {

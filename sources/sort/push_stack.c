@@ -6,11 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:02:03 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:14:49 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:22:05 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	change_location(t_list *node)
 {

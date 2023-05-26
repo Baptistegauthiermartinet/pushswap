@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_push_swap.c                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 12:04:29 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:15:25 by bgauthie         ###   ########.fr       */
+/*   Created: 2022/11/07 13:30:00 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/05/26 13:21:56 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	ft_lstsize_push_swap(t_list *lst)
+size_t	ft_strlen(const char *s)
 {
-	int		i;
-	t_list	*temp;
-	t_list	*current;
+	size_t	i;
 
-	temp = lst;
-	current = lst -> next;
-	i = 1;
-	while (current != temp)
-	{
-		current = current -> next;
+	i = 0;
+	while (s[i] != 0)
 		i++;
-	}
-	lst = temp;
 	return (i);
 }

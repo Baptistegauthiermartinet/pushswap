@@ -6,11 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 14:49:25 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:20:43 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:21:59 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_putnbr_base_fd(long long nbr, char *base, int *printed, int fd)
 {

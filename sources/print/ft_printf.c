@@ -6,11 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 13:20:34 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:20:52 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:22:02 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_printf(const char *str, ...)
 {

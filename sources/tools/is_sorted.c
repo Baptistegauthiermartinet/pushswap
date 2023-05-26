@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/18 15:18:21 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:24:33 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/05/02 12:05:31 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/05/26 13:22:34 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	is_sorted(t_list *stack)
 {
-	if (lst)
+	t_list	*last_node;
+	t_list	*first_node;
+	t_list	*temp;
+
+	last_node = stack -> previous;
+	first_node = stack;
+	while (stack != last_node)
 	{
-		while (lst -> next != NULL)
-			lst = lst -> next;
+		temp = stack -> next;
+		if (stack -> nbr > temp -> nbr)
+			return (0);
+		stack = stack -> next;
 	}
-	return (lst);
+	stack = first_node;
+	return (1);
 }

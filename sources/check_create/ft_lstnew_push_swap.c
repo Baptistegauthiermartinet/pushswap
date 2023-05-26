@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_push_swap.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/07 13:15:30 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:23:27 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/01/30 10:29:38 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/05/26 13:21:23 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	ft_isdigit(int c)
+t_list	*ft_lstnew_push_swap(int content)
 {
-	return (c >= 48 && c <= 57);
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new -> location = 'a';
+	new -> nbr = content;
+	new -> next = NULL;
+	new -> previous = NULL;
+	return (new);
 }

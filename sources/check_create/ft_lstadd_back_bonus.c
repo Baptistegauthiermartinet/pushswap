@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 12:05:31 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/02 13:28:14 by bgauthie         ###   ########.fr       */
+/*   Created: 2022/11/18 17:12:54 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/05/26 13:21:16 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	is_sorted(t_list *stack)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*last_node;
-	t_list	*first_node;
-	t_list	*temp;
+	t_list	*head;
 
-	last_node = stack -> previous;
-	first_node = stack;
-	while (stack != last_node)
+	if (lst && new)
 	{
-		temp = stack -> next;
-		if (stack -> nbr > temp -> nbr)
-			return (0);
-		stack = stack -> next;
+		head = *lst;
+		while (*lst && (*lst)-> next)
+			*lst = (*lst)-> next;
+		if (*lst)
+		{
+			(*lst)-> next = new;
+			*lst = head;
+		}
+		else
+			*lst = new;
 	}
-	stack = first_node;
-	return (1);
 }

@@ -6,11 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:39:51 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/04/24 17:23:30 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:21:51 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	ft_lenint(int nb)
 {
