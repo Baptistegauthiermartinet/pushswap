@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:45:01 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/26 13:22:16 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:53:59 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,36 +39,82 @@ static int	shorter_path(t_list **stack, int idx)
 		return (-j);
 }
 
+static void	go_next(t_list **stack, int cpt)
+{
+	while (cpt != 0)
+	{
+		if (cpt > 0)
+		{
+			rotate_stack(stack);
+			cpt--;
+		}
+		if (cpt < 0)
+		{
+			rev_rotate_stack(stack);
+			cpt++;
+		}
+	}
+}
+
+static void	empty_sort(t_list **stack_a, t_list **stack_b)
+{
+	push_stack(stack_b, stack_a);
+	if (check_neighbours(stack_b) == 1)
+		rotate_stack(stack_b);
+	if (check_two_top(stack_b) == 1 && check_two_top(stack_a) == 2)
+		swap_both(stack_a, stack_b);
+	if (check_two_top(stack_b) == 1)
+		swap_stack(stack_b, 1);
+}
+
+static int	shorter_to(t_list **stack, int boundary)
+{
+	int		i;
+	int		j;
+	t_list	*head;
+
+	i = 0;
+	head = (*stack);
+	while ((*stack)->index > boundary)
+	{
+		(*stack) = (*stack)->next;
+		i++;
+	}
+	j = 0;
+	(*stack) = head;
+	while ((*stack)->index > boundary)
+	{
+		(*stack) = (*stack)->previous;
+		j++;
+	}
+	(*stack) = head;
+	if (i <= j)
+		return (i);
+	else
+		return (-j);
+}
+
 static void	empty_stack(t_list **stack_a, t_list **stack_b)
 {
-	int	len_temp;
-	int	median;
-	int	size;
+	int	nbr_to_push;
+	int	boundary;
+	int	i;
+	int	cpt;
 
-	size = ft_lstsize_push_swap(*stack_a);
-	while (size > 5 && is_sorted(*stack_a) == 0)
+	i = ft_lstsize_push_swap(*stack_a) / 5;
+	boundary = 0;
+	while ((*stack_a) != NULL)
 	{
-		median = get_median(get_idx_max(stack_a), get_idx_min(stack_a));
-		len_temp = size / 2;
-		while (len_temp > 0)
+		boundary += i;
+		nbr_to_push = i;
+		while (nbr_to_push > 0 && (*stack_a) != NULL)
 		{
-			if ((*stack_a)-> index < median)
-			{
-				push_stack(stack_b, stack_a);
-				if (check_neighbours(stack_a) == 2 && check_neighbours(stack_b) == 1)
-					rotate_both(stack_a, stack_b);
-				else if (check_neighbours(stack_b) == 1)
-					rotate_stack(stack_b);
-				if (check_two_top(stack_b) == 1 && check_two_top(stack_a) == 2)
-					swap_both(stack_a, stack_b);
-				else if (check_two_top(stack_b) == 1)
-					swap_stack(stack_b, 1);
-				len_temp--;
-			}
-			else
-				rotate_stack(stack_a);
+			cpt = shorter_to(stack_a, boundary);
+			go_next(stack_a, cpt);
+			empty_sort(stack_a, stack_b);
+			nbr_to_push--;
+			print_stacks(*stack_a, *stack_b);
 		}
-		size = ft_lstsize_push_swap(*stack_a);
 	}
 }
 
@@ -77,24 +123,16 @@ void	sort_long(t_list **stack_a, t_list **stack_b)
 	int	cpt;
 
 	empty_stack(stack_a, stack_b);
-	if (is_sorted(*stack_a) == 0)
-		sort(stack_a, stack_b);
 	while ((*stack_b) != NULL)
 	{
-		cpt = shorter_path(stack_b, (*stack_a)->index -1);
-		while (cpt != 0)
+		if ((*stack_a) == NULL)
 		{
-			if (cpt > 0)
-			{
+			while ((*stack_b)-> index != ft_lstsize_push_swap(*stack_b))
 				rotate_stack(stack_b);
-				cpt--;
-			}
-			if (cpt < 0)
-			{
-				rev_rotate_stack(stack_b);
-				cpt++;
-			}
+			push_stack(stack_a, stack_b);
 		}
+		cpt = shorter_path(stack_b, (*stack_a)->index -1);
+		go_next(stack_b, cpt);
 		push_stack(stack_a, stack_b);
 	}
 }

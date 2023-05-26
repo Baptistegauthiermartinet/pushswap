@@ -6,13 +6,13 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/26 13:22:10 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:14:28 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	print_stack(t_list *lst)
+void	print_stack(t_list *lst)		/*a retirer*/
 {
 	t_list	*temp;
 
@@ -32,7 +32,7 @@ void	print_stack(t_list *lst)
 	lst = temp;
 }
 
-void	print_stacks(t_list *a, t_list *b)
+void	print_stacks(t_list *a, t_list *b)		/*a retirer*/
 {
 	print_stack(a);
 	print_stack(b);
@@ -63,13 +63,8 @@ int	main(int argc, char **argv)
 		return (0);
 	set_index(stack_a);
 	sort(&stack_a, &stack_b);
-	
-	
 	print_stacks(stack_a, stack_b);
 	if (is_sorted(stack_a) == 1)
 		ft_printf("SUCCESS\n");
+	//free_stack(stack_a);
 }
-
-
-/*
-	debug ----> -g dans makefile, fichier json a completer(args et nom de l`exec), F5*/

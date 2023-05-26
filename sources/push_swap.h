@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/26 12:48:23 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:48:23 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int		check_errors(int argc, char **argv, t_list **a);
 t_list	*create_stack_a(char **argv);
 void	add_prev_ptr(t_list *lst);
 
-void	print_stacks(t_list *a, t_list *b);
-void	print_stack(t_list *lst);
+void	print_stacks(t_list *a, t_list *b);		/*a retirer*/
+void	print_stack(t_list *lst);		/*/*a retirer*/
 
 void	rotate_stack(t_list **stack);
 void	rev_rotate_stack(t_list **stack);
@@ -87,5 +87,7 @@ int		check_neighbours(t_list **stack);
 int		get_idx_min(t_list **stack);
 int		get_idx_max(t_list **stack);
 int		get_median(int max, int min);
+
+void	free_stack(t_list *stack);
 
 #endif

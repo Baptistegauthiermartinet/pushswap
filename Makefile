@@ -16,6 +16,7 @@ sources/sort/sort.c\
 sources/sort/sort_long.c\
 sources/sort/sort_short.c\
 sources/sort/swap.c\
+sources/tools/free.c\
 sources/tools/ft_lstlast_bonus.c\
 sources/tools/ft_lstsize_push_swap.c\
 sources/tools/is_sorted.c\

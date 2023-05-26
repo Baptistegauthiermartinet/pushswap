@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:54:58 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/26 13:22:18 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 14:31:56 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,11 +88,6 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 		rev_rotate_stack(stack_a);
 		rev_rotate_stack(stack_a);
 	}
-	if (is_sorted((*stack_a)-> next) == 1)
-	{
-		rotate_stack(stack_a);
-		return ;
-	}
 	push_stack(stack_b, stack_a);
 	sort_four(stack_a, stack_b);
 	push_stack(stack_a, stack_b);
@@ -101,6 +96,16 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 
 void	sort_short(t_list **stack_a, t_list **stack_b, int len)
 {
+	if (is_sorted((*stack_a)-> next) == 1)
+	{
+		rotate_stack(stack_a);
+		return ;
+	}
+	if (is_sorted((*stack_a)-> previous) == 1)
+	{
+		rev_rotate_stack(stack_a);
+		return ;
+	}
 	if (len == 2)
 		sort_two(stack_a);
 	else if (len == 3)

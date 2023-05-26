@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 18:03:30 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/26 13:22:35 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/26 16:40:24 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	get_idx_min(t_list **stack)
 	*stack = head;
 	return (idx_min);
 }
-
+/*
 int	get_idx_max(t_list **stack)
 {
 	t_list	*head;
@@ -92,3 +92,4 @@ int	get_median(int max, int min)
 		median = median / 2 + 1;
 	return (median);
 }
+*/
