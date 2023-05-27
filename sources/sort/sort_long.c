@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:45:01 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/26 16:53:59 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:58:30 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,12 +101,20 @@ static void	empty_stack(t_list **stack_a, t_list **stack_b)
 	int	i;
 	int	cpt;
 
-	i = ft_lstsize_push_swap(*stack_a) / 5;
+	i = ft_lstsize_push_swap(*stack_a) / 13;
 	boundary = 0;
 	while ((*stack_a) != NULL)
 	{
-		boundary += i;
-		nbr_to_push = i;
+		if (i == 0)
+		{
+			boundary = ft_lstsize_push_swap(*stack_a);
+			nbr_to_push = boundary;
+		}
+		else
+		{
+			boundary += i;
+			nbr_to_push = i;
+		}
 		while (nbr_to_push > 0 && (*stack_a) != NULL)
 		{
 			cpt = shorter_to(stack_a, boundary);
@@ -134,5 +142,6 @@ void	sort_long(t_list **stack_a, t_list **stack_b)
 		cpt = shorter_path(stack_b, (*stack_a)->index -1);
 		go_next(stack_b, cpt);
 		push_stack(stack_a, stack_b);
+		print_stacks(*stack_a, *stack_b);
 	}
 }

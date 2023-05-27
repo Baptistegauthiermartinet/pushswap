@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/26 13:20:22 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/05/27 18:40:01 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static int	ft_is_int(int argc, char **argv)
 {
 	int		i;
 	int		arg_len;
-	int		nbr;
+	long int		nbr;
 	char	*str;
 
 	i = 1;
@@ -46,8 +46,6 @@ static int	ft_is_int(int argc, char **argv)
 	{
 		if (is_str_int(argv[i]) == 0)
 			return (0);
-		if (argv[i][0] == '0')
-			return (1);
 		arg_len = ft_strlen(argv[i]);
 		nbr = ft_atoi(argv[i]);
 		str = ft_itoa(nbr);
@@ -93,3 +91,6 @@ int	check_errors(int argc, char **argv, t_list **a)
 		return (print_error());
 	return (1);
 }
+
+/*pb sur :  
+			le 0*/
