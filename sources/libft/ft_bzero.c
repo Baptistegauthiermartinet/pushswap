@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 12:05:31 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/02 13:03:44 by bgauthie         ###   ########.fr       */
+/*   Created: 2022/11/08 14:51:11 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/06/02 12:51:43 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	is_sorted(t_list *stack)
+void	ft_bzero(void *s, size_t n)
 {
-	t_list	*last_node;
-	t_list	*first_node;
-	t_list	*temp;
+	size_t			i;
+	unsigned char	*str;
 
-	last_node = stack -> previous;
-	first_node = stack;
-	while (stack != last_node)
+	str = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		temp = stack -> next;
-		if (stack -> nbr > temp -> nbr)
-			return (0);
-		stack = stack -> next;
+		str[i] = 0;
+		i++;
 	}
-	stack = first_node;
-	return (1);
-}
-
-int	get_len_tab(char **tab)
-{
-	int len;
-
-	len = 0;
-	while (tab[len] != NULL)
-		len++;
-	return (len);
 }

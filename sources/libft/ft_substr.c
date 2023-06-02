@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 12:05:31 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/02 13:03:44 by bgauthie         ###   ########.fr       */
+/*   Created: 2022/11/08 13:21:42 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/06/02 12:50:08 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	is_sorted(t_list *stack)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	t_list	*last_node;
-	t_list	*first_node;
-	t_list	*temp;
+	char	*new;
+	size_t	s_size;
+	size_t	i;
 
-	last_node = stack -> previous;
-	first_node = stack;
-	while (stack != last_node)
+	s_size = ft_strlen(s);
+	if (len == 0 || start >= s_size)
+		return (ft_calloc(1, 1));
+	if (len >= s_size - start)
+		len = s_size - start;
+	new = malloc(sizeof(char) * len + sizeof(char));
+	if (!new)
+		return (NULL);
+	new[len] = '\0';
+	i = 0;
+	while (i < len)
 	{
-		temp = stack -> next;
-		if (stack -> nbr > temp -> nbr)
-			return (0);
-		stack = stack -> next;
+		new[i] = s[i + start];
+		i++;
 	}
-	stack = first_node;
-	return (1);
-}
-
-int	get_len_tab(char **tab)
-{
-	int len;
-
-	len = 0;
-	while (tab[len] != NULL)
-		len++;
-	return (len);
+	return (new);
 }

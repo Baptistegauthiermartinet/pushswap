@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:47:22 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/31 12:47:59 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/02 12:49:37 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static char	**ft_fill_tab(char **tab, const char *str, char sep, size_t count)
 		if (!tab[i])
 		{
 			i--;
-			while (i >= 0)
+			while (i != 0)
 				free(tab[i--]);
 			free(tab);
 			return (NULL);

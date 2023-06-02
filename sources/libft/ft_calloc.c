@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 12:05:31 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/02 13:03:44 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/01/10 15:23:19 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/06/02 12:51:53 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	is_sorted(t_list *stack)
+void	*ft_calloc(size_t count, size_t size)
 {
-	t_list	*last_node;
-	t_list	*first_node;
-	t_list	*temp;
+	void	*s;
 
-	last_node = stack -> previous;
-	first_node = stack;
-	while (stack != last_node)
-	{
-		temp = stack -> next;
-		if (stack -> nbr > temp -> nbr)
-			return (0);
-		stack = stack -> next;
-	}
-	stack = first_node;
-	return (1);
-}
-
-int	get_len_tab(char **tab)
-{
-	int len;
-
-	len = 0;
-	while (tab[len] != NULL)
-		len++;
-	return (len);
+	if (count > 0 && (size != size * count / count))
+		return (NULL);
+	s = malloc(size * count);
+	if (s == NULL)
+		return (NULL);
+	ft_bzero(s, size * count);
+	return (s);
 }

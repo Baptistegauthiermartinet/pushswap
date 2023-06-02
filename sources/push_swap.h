@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/31 13:06:03 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:01:47 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_bzero(void *s, size_t n);
 
 /*Fonctions ft_printf*/
 void	ft_putnbr_base_fd(long long nbr, char *base, int *printed, int fd);
@@ -52,6 +55,7 @@ int		ft_lstsize_push_swap(t_list *lst);
 int		check_errors(int argc, char **argv, t_list **a);
 
 t_list	*create_stack_a(char **argv);
+t_list	*create_stack_from_tab(char **argv);
 void	add_prev_ptr(t_list *lst);
 
 void	print_stacks(t_list *a, t_list *b);		/*a retirer*/
@@ -69,6 +73,7 @@ void	swap_stack(t_list **stack, int n);
 void	swap_both(t_list **stack_a, t_list **stack_b);
 
 int		is_sorted(t_list *stack);
+int	get_len_tab(char **tab);
 
 void	set_index(t_list *stack);
 

@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/26 16:14:28 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:04:30 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ int	main(int argc, char **argv)
 	print_stacks(stack_a, stack_b);
 	if (is_sorted(stack_a) == 1)
 		ft_printf("SUCCESS\n");
-	//free_stack(stack_a);
+	free_stack(stack_a);
 }

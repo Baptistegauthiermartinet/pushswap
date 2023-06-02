@@ -5,8 +5,12 @@ sources/check_create/ft_lstnew_push_swap.c\
 sources/libft/ft_atoi.c\
 sources/libft/ft_isdigit.c\
 sources/libft/ft_itoa.c\
+sources/libft/ft_split.c\
 sources/libft/ft_strdup.c\
 sources/libft/ft_strlen.c\
+sources/libft/ft_substr.c\
+sources/libft/ft_bzero.c\
+sources/libft/ft_calloc.c\
 sources/print/ft_printf.c\
 sources/print/ft_printf_utils.c\
 sources/sort/push_stack.c\

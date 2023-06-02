@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/05/31 13:18:01 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/02 13:25:26 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,27 +82,25 @@ static int	check_duplicates(t_list	*lst)
 
 int	check_errors(int argc, char **argv, t_list **a)
 {
-//	char	**tab;
+	char	**tab;
 	
 	if (argc == 1)
 		return (0);
-/*	if (argc == 2)
+	if (argc == 2)
 	{
 		tab = ft_split(argv[1], ' ');
-		get len tab;
-		if (ft_is_int(len_tab, tab) == 0)
+		if (ft_is_int(get_len_tab(tab), tab) == 0)
 			return (print_error());
 	}
-*/	if (/*!tab &&*/ft_is_int(argc, argv) == 0)
+	if (!tab && ft_is_int(argc, argv) == 0)
 		return (print_error());
-/*	if (tab)
+	if (tab)
 	{
-		*a = create_stack_a(tab);
+		*a = create_stack_from_tab(tab);
 		free(tab);
 	}
 	else if (!tab)
 		*a = create_stack_a(argv);
-*/	*a = create_stack_a(argv);
 	if (check_duplicates(*a) == 0)
 		return (print_error());
 	return (1);
