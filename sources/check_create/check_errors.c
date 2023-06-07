@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/02 13:25:26 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:23:06 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ static int	is_str_int(char *str)
 
 static int	ft_is_int(int argc, char **argv)
 {
-	int		i;
-	int		arg_len;
-	long int		nbr;
-	char	*str;
+	int			i;
+	int			arg_len;
+	long int	nbr;
+	char		*str;
 
 	i = 1;
 	while (i < argc)
@@ -83,24 +83,25 @@ static int	check_duplicates(t_list	*lst)
 int	check_errors(int argc, char **argv, t_list **a)
 {
 	char	**tab;
-	
+
 	if (argc == 1)
 		return (0);
 	if (argc == 2)
 	{
 		tab = ft_split(argv[1], ' ');
-		if (ft_is_int(get_len_tab(tab), tab) == 0)
+		if (tab == NULL)
 			return (print_error());
-	}
-	if (!tab && ft_is_int(argc, argv) == 0)
-		return (print_error());
-	if (tab)
-	{
+		if (ft_is_int(get_len_tab(tab), tab) == 0)
+			return (free_tab(tab), print_error());
 		*a = create_stack_from_tab(tab);
-		free(tab);
+		free_tab(tab);
 	}
-	else if (!tab)
+	else
+	{
+		if (ft_is_int(argc, argv) == 0)
+			return (print_error());
 		*a = create_stack_a(argv);
+	}
 	if (check_duplicates(*a) == 0)
 		return (print_error());
 	return (1);

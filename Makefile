@@ -22,28 +22,34 @@ sources/sort/sort_short.c\
 sources/sort/swap.c\
 sources/tools/free.c\
 sources/tools/ft_lstlast_bonus.c\
-sources/tools/ft_lstsize_push_swap.c\
-sources/tools/is_sorted.c\
 sources/tools/sorting_tools.c\
-sources/tools/tool.c
-OBJ = $(SRC:.c=.o)
+sources/tools/tool.c\
+sources/tools/tools.c
+OBJ_DIR = obj/
+OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 CC = cc -Wall -Wextra -Werror
 HEAD = sources/push_swap.h
 NAME = push_swap
 
 
-
-$(NAME) : $(OBJ) 
-	$(CC) -o $(NAME) $(SRC)
-
 all : $(NAME)
 
+$(OBJ_DIR)%.o : %.c $(HEAD)
+	mkdir -p $(shell dirname $@)
+	$(CC) -c $< -o $@
+
+$(NAME) : $(OBJ_DIR) $(OBJ) 
+	$(CC) $(OBJ) -o $(NAME)
+
+${OBJ_DIR} :
+	mkdir $(OBJ_DIR)
+
 clean :
-	rm $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean : clean
-	rm $(NAME)
+	rm -rf $(NAME)
 
 re : fclean all
 
-.PHONY : all clean fclean re push_swap
+.PHONY : all clean fclean re

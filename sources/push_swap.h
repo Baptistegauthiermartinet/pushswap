@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/02 13:01:47 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:21:12 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	get_type(const char *str, va_list a, size_t *i, int *printed);
 
 /*Fonctins push_swap*/
 t_list	*ft_lstnew_push_swap(int content);
-int		ft_lstsize_push_swap(t_list *lst);
 
 int		check_errors(int argc, char **argv, t_list **a);
 
@@ -58,22 +57,19 @@ t_list	*create_stack_a(char **argv);
 t_list	*create_stack_from_tab(char **argv);
 void	add_prev_ptr(t_list *lst);
 
-void	print_stacks(t_list *a, t_list *b);		/*a retirer*/
-void	print_stack(t_list *lst);		/*/*a retirer*/
-
 void	rotate_stack(t_list **stack);
 void	rev_rotate_stack(t_list **stack);
 void	rotate_both(t_list **stack_a, t_list **stack_b);
 void	rev_rotate_both(t_list **stack_a, t_list **stack_b);
-
 void	push_stack(t_list **stack_to, t_list **stack_from);
-int		nbr_comp(char *nbr, char *argument, int n);
-
 void	swap_stack(t_list **stack, int n);
 void	swap_both(t_list **stack_a, t_list **stack_b);
 
+int		nbr_comp(char *nbr, char *argument, int n);
 int		is_sorted(t_list *stack);
-int	get_len_tab(char **tab);
+int		get_len_tab(char **tab);
+int		ft_lstsize_push_swap(t_list *lst);
+int		full_sep(const char *str, char sep);
 
 void	set_index(t_list *stack);
 
@@ -91,9 +87,10 @@ void	sort(t_list **stack_a, t_list **stack_b);
 int		check_two_top(t_list **stack);
 int		check_neighbours(t_list **stack);
 int		get_idx_min(t_list **stack);
-int		get_idx_max(t_list **stack);
-int		get_median(int max, int min);
+void	empty_sort(t_list **stack_a, t_list **stack_b);
+void	go_next(t_list **stack, int cpt);
 
 void	free_stack(t_list *stack);
+void	free_tab(char **tab);
 
 #endif

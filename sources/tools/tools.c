@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/02 12:05:31 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/02 13:03:44 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/06/07 12:46:40 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/06/07 15:18:08 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,45 @@ int	is_sorted(t_list *stack)
 
 int	get_len_tab(char **tab)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (tab[len] != NULL)
 		len++;
 	return (len);
+}
+
+int	ft_lstsize_push_swap(t_list *lst)
+{
+	int		i;
+	t_list	*temp;
+	t_list	*current;
+
+	if (lst == NULL)
+		return (0);
+	temp = lst;
+	current = lst -> next;
+	i = 1;
+	while (current != temp)
+	{
+		current = current -> next;
+		i++;
+	}
+	lst = temp;
+	return (i);
+}
+
+int	full_sep(const char *str, char sep)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != sep)
+			return (1);
+		else
+			i++;
+	}
+	return (0);
 }

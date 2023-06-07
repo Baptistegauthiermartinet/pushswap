@@ -6,37 +6,11 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/02 13:04:30 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:25:06 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	print_stack(t_list *lst)		/*a retirer*/
-{
-	t_list	*temp;
-
-	if (!lst)
-	{
-		ft_printf("stack NULL\n");
-		return ;
-	}
-	temp = lst -> previous;
-	ft_printf("Stack %c = ", lst -> location);
-	while (lst != temp)
-	{
-		ft_printf(" %d(%d) ", lst -> nbr, lst -> index);
-		lst = lst->next;
-	}
-	ft_printf(" %d(%d)\n", lst -> nbr, lst -> index);
-	lst = temp;
-}
-
-void	print_stacks(t_list *a, t_list *b)		/*a retirer*/
-{
-	print_stack(a);
-	print_stack(b);
-}
 
 void	name_b(t_list *b)
 {
@@ -63,8 +37,8 @@ int	main(int argc, char **argv)
 		return (0);
 	set_index(stack_a);
 	sort(&stack_a, &stack_b);
-	print_stacks(stack_a, stack_b);
-	if (is_sorted(stack_a) == 1)
-		ft_printf("SUCCESS\n");
 	free_stack(stack_a);
+	stack_a = NULL;
+	free_stack(stack_b);
+	stack_b = NULL;
 }

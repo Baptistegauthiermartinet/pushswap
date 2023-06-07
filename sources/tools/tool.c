@@ -6,15 +6,17 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 12:21:43 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/02 12:39:46 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/07 12:03:42 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
 static int	is_it_zero(char *str)
 {
 	int	i;
 
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] != '0')
@@ -23,6 +25,7 @@ static int	is_it_zero(char *str)
 	}
 	return (1);
 }
+
 int	nbr_comp(char *nbr, char *argument, int n)
 {
 	int	i;
