@@ -6,11 +6,17 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/08 12:29:28 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 15:59:46 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	print_error(void)
+{
+	ft_printf("Error\n");
+	return (0);
+}
 
 void	name_b(t_list *b)
 {

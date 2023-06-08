@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/08 12:41:42 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 16:16:35 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	get_type(const char *str, va_list a, size_t *i, int *printed);
 /*Fonctins push_swap*/
 t_list	*ft_lstnew_push_swap(int content);
 
+int		print_error(void);
+int		is_str_valid(const char *str);
 int		check_errors(int argc, char **argv, t_list **a);
 int		is_str_int(const char *str);
 

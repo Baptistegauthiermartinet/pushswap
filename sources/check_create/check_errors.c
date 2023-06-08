@@ -6,16 +6,26 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/08 12:26:35 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 16:17:57 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	print_error(void)
+int	is_str_valid(const char *str)
 {
-	ft_printf("Error\n");
-	return (0);
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '-')
+			i++;
+		if (ft_isdigit(str[i]) == 0 && str[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 int	is_str_int(const char *str)
@@ -34,7 +44,7 @@ int	is_str_int(const char *str)
 	return (1);
 }
 
-static int	ft_is_int(int argc, char **argv)
+static int	is_int(int argc, char **argv)
 {
 	int			i;
 	int			arg_len;
@@ -91,14 +101,14 @@ int	check_errors(int argc, char **argv, t_list **a)
 		tab = ft_split(argv[1], ' ');
 		if (tab == NULL)
 			return (print_error());
-		if (ft_is_int(get_len_tab(tab), tab) == 0)
+		if (is_int(get_len_tab(tab), tab) == 0)
 			return (free_tab(tab), print_error());
 		*a = create_stack_from_tab(tab);
 		free_tab(tab);
 	}
 	else
 	{
-		if (ft_is_int(argc, argv) == 0)
+		if (is_int(argc, argv) == 0)
 			return (print_error());
 		*a = create_stack_a(argv);
 	}

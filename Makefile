@@ -2,15 +2,6 @@ SRC = sources/check_create/check_errors.c\
 sources/check_create/create_stacks.c\
 sources/check_create/ft_lstadd_back_bonus.c\
 sources/check_create/ft_lstnew_push_swap.c\
-sources/libft/ft_atoi.c\
-sources/libft/ft_isdigit.c\
-sources/libft/ft_itoa.c\
-sources/libft/ft_split.c\
-sources/libft/ft_strdup.c\
-sources/libft/ft_strlen.c\
-sources/libft/ft_substr.c\
-sources/libft/ft_bzero.c\
-sources/libft/ft_calloc.c\
 sources/print/ft_printf.c\
 sources/print/ft_printf_utils.c\
 sources/sort/push_stack.c\
@@ -20,6 +11,15 @@ sources/sort/sort.c\
 sources/sort/sort_long.c\
 sources/sort/sort_short.c\
 sources/sort/swap.c\
+sources/tools/ft_atoi.c\
+sources/tools/ft_isdigit.c\
+sources/tools/ft_itoa.c\
+sources/tools/ft_split.c\
+sources/tools/ft_strdup.c\
+sources/tools/ft_strlen.c\
+sources/tools/ft_substr.c\
+sources/tools/ft_bzero.c\
+sources/tools/ft_calloc.c\
 sources/tools/free.c\
 sources/tools/ft_lstlast_bonus.c\
 sources/tools/sorting_tools.c\
@@ -38,7 +38,7 @@ $(OBJ_DIR)%.o : %.c $(HEAD)
 	mkdir -p $(shell dirname $@)
 	$(CC) -c $< -o $@
 
-$(NAME) : $(OBJ_DIR) $(OBJ) 
+$(NAME) : $(OBJ_DIR) $(OBJ) Makefile
 	$(CC) $(OBJ) -o $(NAME)
 
 ${OBJ_DIR} :
