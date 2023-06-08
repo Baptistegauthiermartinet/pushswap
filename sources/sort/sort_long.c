@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 19:45:01 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/07 12:44:04 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 12:44:37 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static void	empty_stack(t_list **stack_a, t_list **stack_b)
 	int	boundary;
 	int	i;
 
-	i = ft_lstsize_push_swap(*stack_a) / 13;
+	i = choose_segment(stack_a);
 	boundary = 0;
 	while ((*stack_a) != NULL)
 	{

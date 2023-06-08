@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 12:46:40 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/07 15:18:08 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 12:46:57 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,15 @@ int	full_sep(const char *str, char sep)
 			i++;
 	}
 	return (0);
+}
+
+int	choose_segment(t_list **stack)
+{
+	int	size;
+
+	size = ft_lstsize_push_swap(*stack);
+	if (size <= 100)
+		return (size / 8);
+	else
+		return (size / 13);
 }

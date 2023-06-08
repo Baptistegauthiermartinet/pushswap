@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/08 12:26:44 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 12:41:42 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int		is_sorted(t_list *stack);
 int		get_len_tab(char **tab);
 int		ft_lstsize_push_swap(t_list *lst);
 int		full_sep(const char *str, char sep);
+int		choose_segment(t_list **stack);
 
 void	set_index(t_list *stack);
 
