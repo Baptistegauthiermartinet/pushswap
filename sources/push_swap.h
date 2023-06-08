@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/07 15:21:12 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 12:26:44 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	get_type(const char *str, va_list a, size_t *i, int *printed);
 t_list	*ft_lstnew_push_swap(int content);
 
 int		check_errors(int argc, char **argv, t_list **a);
+int		is_str_int(const char *str);
 
 t_list	*create_stack_a(char **argv);
 t_list	*create_stack_from_tab(char **argv);

@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:10:41 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/07 15:25:06 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 12:29:28 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ int	main(int argc, char **argv)
 		return (0);
 	add_prev_ptr(stack_a);
 	if (is_sorted(stack_a) == 1)
+	{
+		free_stack(stack_a);
 		return (0);
+	}
 	set_index(stack_a);
 	sort(&stack_a, &stack_b);
 	free_stack(stack_a);

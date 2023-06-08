@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/07 15:23:06 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 12:26:35 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	print_error(void)
 	return (0);
 }
 
-static int	is_str_int(char *str)
+int	is_str_int(const char *str)
 {
 	int	i;
 

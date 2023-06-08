@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 12:47:22 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/07 15:18:46 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/08 12:26:26 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ char	**ft_split(char const *str, char sep)
 	char	**tab;
 	size_t	count;
 
-	if (str[0] == '\0' || full_sep(str, sep) == 0)
+	if (str[0] == '\0' || full_sep(str, sep) == 0 || is_str_int(str) == 0)
 		return (NULL);
 	ft_trim_left(&str, sep);
 	count = ft_count_word(str, sep);
