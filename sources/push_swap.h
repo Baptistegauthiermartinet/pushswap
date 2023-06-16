@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/16 10:09:16 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/16 12:00:45 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ void	go_next(t_list **stack, int cpt);
 
 void	free_stack(t_list *stack);
 void	free_tab(char **tab);
+int		free_simple_stack(t_list *stack);
 
 #endif

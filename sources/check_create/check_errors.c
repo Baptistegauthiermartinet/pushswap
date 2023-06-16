@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/16 10:09:31 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/16 12:05:09 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,6 @@ int	check_errors(int argc, char **argv, t_list **a)
 		*a = create_stack_a(argv);
 	}
 	if (check_duplicates(*a) == 0)
-		return (print_error());
+		return (free_simple_stack(*a));
 	return (1);
 }

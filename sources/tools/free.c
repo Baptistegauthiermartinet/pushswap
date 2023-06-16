@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 13:41:29 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/07 15:24:48 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/16 12:00:57 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,20 @@ void	free_tab(char **tab)
 	while (tab[i])
 		free(tab[i++]);
 	free(tab);
+}
+
+int	free_simple_stack(t_list *stack)
+{
+	t_list	*temp;
+
+	if (stack == NULL)
+		return (0);
+	temp = stack;
+	while (stack != NULL)
+	{
+		stack = stack -> next;
+		free(temp);
+		temp = stack;
+	}
+	return (print_error());
 }
