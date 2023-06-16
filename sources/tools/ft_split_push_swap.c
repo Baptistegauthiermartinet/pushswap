@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_push_swap.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 12:47:22 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/08 16:07:45 by bgauthie         ###   ########.fr       */
+/*   Created: 2023/06/16 10:10:34 by bgauthie          #+#    #+#             */
+/*   Updated: 2023/06/16 10:11:34 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static void	ft_trim_left(const char **str, char sep)
 		(*str)++;
 }
 
-char	**ft_split(char const *str, char sep)
+char	**ft_split_push_swap(char const *str, char sep)
 {
 	char	**tab;
 	size_t	count;

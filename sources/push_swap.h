@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:07:53 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/08 16:16:35 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/16 10:09:16 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 char	*ft_itoa(int n);
-char	**ft_split(char const *str, char sep);
+char	**ft_split_push_swap(char const *str, char sep);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
 t_list	*ft_lstlast(t_list *lst);

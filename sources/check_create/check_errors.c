@@ -6,7 +6,7 @@
 /*   By: bgauthie <bgauthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:19:44 by bgauthie          #+#    #+#             */
-/*   Updated: 2023/06/08 16:17:57 by bgauthie         ###   ########.fr       */
+/*   Updated: 2023/06/16 10:09:31 by bgauthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	check_errors(int argc, char **argv, t_list **a)
 		return (0);
 	if (argc == 2)
 	{
-		tab = ft_split(argv[1], ' ');
+		tab = ft_split_push_swap(argv[1], ' ');
 		if (tab == NULL)
 			return (print_error());
 		if (is_int(get_len_tab(tab), tab) == 0)

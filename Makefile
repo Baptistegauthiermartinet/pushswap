@@ -14,7 +14,7 @@ sources/sort/swap.c\
 sources/tools/ft_atoi.c\
 sources/tools/ft_isdigit.c\
 sources/tools/ft_itoa.c\
-sources/tools/ft_split.c\
+sources/tools/ft_split_push_swap.c\
 sources/tools/ft_strdup.c\
 sources/tools/ft_strlen.c\
 sources/tools/ft_substr.c\
